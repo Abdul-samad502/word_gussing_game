@@ -1,2 +1,36 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+import random
+name=input("What is your name:")
+print("Welcome!",name)
+words=['Raimbow','maths','king','free fire ','Game','python','cobra','science'
+       'player','board','calk','samsung','iphone','onplus','asus'
+       ,'Macbook','apple','Google','Facebook','instagram'
+
+
+]
+word=random.choice(words)
+print("Guess The Charecters")
+guesses=''
+turns=10
+while turns>0:
+    failed=0
+    for char in word:
+        if char in guesses:
+            print(char,end=" ")
+        else:
+            print("_")
+            failed+=1
+    if failed==0:
+        print("You win")
+        print("the word is",word)
+    else:
+        print("you have",turns,"more guesses")
+        guess=input("guess a charecter:")
+        guesses+=guess
+        if guess not in word:
+            turns-=1
+            print("Worng")
+            print("you have only",+turns,"more guesses")
+            if turns==0:
+                print("YOU LOOSE!!!!")
+
+
